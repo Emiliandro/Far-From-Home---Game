@@ -2,48 +2,109 @@
 using System.Collections;
 
 public class Teleport : MonoBehaviour {
-	[SerializeField] private GameObject player;
-	[SerializeField] private int count;
-	[SerializeField] private Collision collision;
-	void Start(){
+	private GameObject player, camera;
+	void Awake(){
+		camera = GameObject.FindGameObjectWithTag ("MainCamera");
 		player = GameObject.FindGameObjectWithTag ("Player");
-		count = 0;
-	}
-
-	//private void OnCollisionEnter(Collision collision){
-	void Update(){
-		if (collision.gameObject.name == "t1") count = 1;
-		if (collision.gameObject.name == "t2") count = 2;
-		if (collision.gameObject.name == "t3") count = 3;
-		if (collision.gameObject.name == "t4") count = 4;
-		if (collision.gameObject.name == "t5") count = 5;
-		if (collision.gameObject.name == "t6") count = 6;
-		if (collision.gameObject.name == "t7") count = 7;
 	}
 
 	private void OnTriggerEnter2D(Collider2D other){
-		switch (count) {
-		case 1:
-			player.transform.position = new Vector2(-8,-1);
+		switch (other.gameObject.name) {
+		case "t1":
+			player.transform.position = new Vector2 (-7, 30);
+			camera.transform.position = new Vector3 (0, 31, -10);
 			break;
-		case 2:
-			player.transform.position = new Vector2(-8,-1);
+		case "t2":
+			player.transform.position = new Vector2(-7,59.4f);
+			camera.transform.position = new Vector3 (0, 61, -10);
 			break;
-		case 3:
-			player.transform.position = new Vector2(-8,-1);
+		case "t3":
+			player.transform.position = new Vector2(7,-2);
+			camera.transform.position = new Vector3 (0, 0, -10);
 			break;
-		case 4:
-			player.transform.position = new Vector2(-8,-1);
+		case "t4":
+			player.transform.position = new Vector2(53,-0.1f);
+			camera.transform.position = new Vector3 (60, 1.5f, -10);
 			break;
-		case 5: 
-			player.transform.position = new Vector2(-8,-1);
+		case "t5": 
+			player.transform.position = new Vector2(8,30);
+			camera.transform.position = new Vector3 (0, 31, -10);
 			break;
-		case 6: 
-			player.transform.position = new Vector2(-8,-1);
+		case "t6": 
+			player.transform.position = new Vector2(-7,-1);
+			camera.transform.position = new Vector3 (0, 0, -10);
 			break;
-		case 7:
-			player.transform.position = new Vector2(-8,-1);
+		case "t7":
+			player.transform.position = new Vector2(8,58);
+			camera.transform.position = new Vector3 (0, 62, -10);
 			break;
+		case "t8":
+			player.transform.position = new Vector2(-7,-1);
+			camera.transform.position = new Vector3 (0, 0, -10);
+			break;
+			player.transform.position = new Vector2(-7,-1);
+			camera.transform.position = new Vector3 (0, 0, -10);
+		case "t9":
+			player.transform.position = new Vector2(-7,-1);
+			camera.transform.position = new Vector3 (0, 0, -10);
+			break;
+		case "t10":
+			player.transform.position = new Vector2(-7,-1);
+			camera.transform.position = new Vector3 (0, 0, -10);
+			break;
+		case "t11":
+			player.transform.position = new Vector2(-7,-1);
+			camera.transform.position = new Vector3 (0, 0, -10);
+			break;
+		case "t12":
+			player.transform.position = new Vector2(-7,-1);
+			camera.transform.position = new Vector3 (0, 0, -10);
+			break;
+		case "t13":
+			player.transform.position = new Vector2(-7,-1);
+			camera.transform.position = new Vector3 (0, 0, -10);
+			break;
+		case "t14":
+			player.transform.position = new Vector2(-7,-1);
+			camera.transform.position = new Vector3 (0, 0, -10);
+			break;
+		case "t15":
+			player.transform.position = new Vector2(-7,-1);
+			camera.transform.position = new Vector3 (0, 0, -10);
+			break;
+		case "t16":
+			player.transform.position = new Vector2(-7,-1);
+			camera.transform.position = new Vector3 (0, 0, -10);
+			break;
+		case "t17":
+			player.transform.position = new Vector2(-7,-1);
+			camera.transform.position = new Vector3 (0, 0, -10);
+			break;
+		case "t18":
+			player.transform.position = new Vector2(-7,-1);
+			camera.transform.position = new Vector3 (0, 0, -10);
+			break;
+		case "t19":
+			player.transform.position = new Vector2(-7,-1);
+			camera.transform.position = new Vector3 (0, 0, -10);
+			break;
+		case "t20":
+			player.transform.position = new Vector2(-7,-1);
+			camera.transform.position = new Vector3 (0, 0, -10);
+			break;
+		case "t21":
+			player.transform.position = new Vector2(-7,-1);
+			camera.transform.position = new Vector3 (0, 0, -10);
+			break;
+		case "t22":
+			player.transform.position = new Vector2(-7,-1);
+			camera.transform.position = new Vector3 (0, 0, -10);
+			break;
+		case "t23":
+			player.transform.position = new Vector2(-7,-1);
+			camera.transform.position = new Vector3 (0, 0, -10);
+			break;
+
 		}
 	}
 }
