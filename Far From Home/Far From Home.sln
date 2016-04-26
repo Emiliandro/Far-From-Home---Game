@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{E25F077E-A1C7-D348-67F0-4AE1EA13C47B}") = "Far From Home", "Assembly-CSharp.csproj", "{2D995A8A-60D7-C94D-324F-9D3AEBFDF0CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D995A8A-60D7-C94D-324F-9D3AEBFDF0CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D995A8A-60D7-C94D-324F-9D3AEBFDF0CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D995A8A-60D7-C94D-324F-9D3AEBFDF0CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D995A8A-60D7-C94D-324F-9D3AEBFDF0CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
