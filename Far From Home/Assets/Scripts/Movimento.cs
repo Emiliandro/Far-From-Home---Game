@@ -34,20 +34,25 @@ public class Movimento : MonoBehaviour {
 		print ("player is connected");
 	}
 
-	void Update(){
-		if (Input.anyKey) {
-			if (Input.GetKeyDown (right)) count = 1;
-			if (Input.GetKeyDown (left)) count = 2;
-			if (Input.GetKeyDown (up)) count = 3;
-			if (Input.GetKeyDown (down)) count = 4;
-		} else {
-			count = 0;
-		}
-		if (Input.anyKey) {
-			if (Input.GetKeyDown (run)) running = true;
-		} else {
-			running = false;
-		}
+	void FixedUpdate(){
+
+        if (Input.GetKey(right))
+        {
+            count = 1;
+            if (Input.GetKey(run)) running = true;
+        }
+        else if (Input.GetKey(left))
+        {
+            if (Input.GetKey(run)) running = true;
+          
+        }
+        else if (Input.GetKey(up)) count = 3;
+        else if (Input.GetKey(down)) count = 4;
+        else
+        {
+            running = false;
+            count = 0;
+        }
 		StartCoroutine(startMoving ());
 		StartCoroutine(startRunning());
 	}
@@ -55,13 +60,13 @@ public class Movimento : MonoBehaviour {
 	private IEnumerator startMoving (){
 		switch (count) {
 		case 0:
-			player_rb.AddForce (new Vector2 (0,0),ForceMode2D.Impulse);
-			break;
+			    player_rb.velocity = new Vector2(0, 0);
+            break;
 		case 1:
-			player_rb.AddForce (new Vector2 (velright, 0), ForceMode2D.Impulse);
+                player_rb.velocity = new Vector2(velright, 0);
 			break;
 		case 2:
-			player_rb.AddForce (new Vector2 (velleft,0),ForceMode2D.Impulse);
+                player_rb.velocity = new Vector2(velleft, 0);
 			break;
 		case 3:
 			break;
