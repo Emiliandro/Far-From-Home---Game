@@ -4,10 +4,11 @@ using System.Collections;
 public class Movimento : MonoBehaviour {
 
 	[SerializeField] private KeyCode right, left, up, down, run;
-	[SerializeField] private float velright, velleft, o_velright, o_velleft;
+	[SerializeField] private float velright, velleft;
+	private float o_velright, o_velleft;
 	[SerializeField] private int count;
 	[SerializeField] private GameObject player;
-	[SerializeField] private Rigidbody2D player_rb;
+	private Rigidbody2D player_rb;
 	[SerializeField] private bool running;
 
 	void Start () {
@@ -47,11 +48,11 @@ public class Movimento : MonoBehaviour {
 		} else {
 			running = false;
 		}
-		startMoving ();
-		startRunning();
+		StartCoroutine(startMoving ());
+		StartCoroutine(startRunning());
 	}
 
-	void startMoving (){
+	private IEnumerator startMoving (){
 		switch (count) {
 		case 0:
 			player_rb.AddForce (new Vector2 (0,0),ForceMode2D.Impulse);
@@ -67,9 +68,10 @@ public class Movimento : MonoBehaviour {
 		case 4:
 			break;
 		}
+		yield return new WaitForSeconds (4);
 	}
 
-	void startRunning (){
+	private IEnumerator startRunning (){
 		switch (running){
 		case true:
 			velleft = o_velleft*1.3f;
@@ -80,5 +82,7 @@ public class Movimento : MonoBehaviour {
 			velright = o_velright;
 			break;
 		}
+		yield return new WaitForSeconds (10);
+
 	}
 }

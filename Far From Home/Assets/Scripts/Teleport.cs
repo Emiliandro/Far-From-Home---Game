@@ -32,7 +32,7 @@ public class Teleport : MonoBehaviour {
 			break;
 		case "t6": 
 			player.transform.position = new Vector2(-7,-1);
-			camera.transform.position = new Vector3 (0, 0, -10);
+			camera.transform.position = new Vector3 (62, 30, -10);
 			break;
 		case "t7":
 			player.transform.position = new Vector2(8,58);
@@ -40,7 +40,7 @@ public class Teleport : MonoBehaviour {
 			break;
 		case "t8":
 			player.transform.position = new Vector2(-7,-1);
-			camera.transform.position = new Vector3 (0, 0, -10);
+			camera.transform.position = new Vector3 (62, 60, -10);
 			break;
 			player.transform.position = new Vector2(-7,-1);
 			camera.transform.position = new Vector3 (0, 0, -10);
@@ -50,7 +50,7 @@ public class Teleport : MonoBehaviour {
 			break;
 		case "t10":
 			player.transform.position = new Vector2(-7,-1);
-			camera.transform.position = new Vector3 (0, 0, -10);
+			camera.transform.position = new Vector3 (110, 1, -10);
 			break;
 		case "t11":
 			player.transform.position = new Vector2(-7,-1);
@@ -58,7 +58,7 @@ public class Teleport : MonoBehaviour {
 			break;
 		case "t12":
 			player.transform.position = new Vector2(-7,-1);
-			camera.transform.position = new Vector3 (0, 0, -10);
+			camera.transform.position = new Vector3 (109.5f, 30.5f, -10);
 			break;
 		case "t13":
 			player.transform.position = new Vector2(-7,-1);
@@ -66,7 +66,7 @@ public class Teleport : MonoBehaviour {
 			break;
 		case "t14":
 			player.transform.position = new Vector2(-7,-1);
-			camera.transform.position = new Vector3 (0, 0, -10);
+			camera.transform.position = new Vector3 (110.4f, 59, -10);
 			break;
 		case "t15":
 			player.transform.position = new Vector2(-7,-1);
@@ -74,7 +74,7 @@ public class Teleport : MonoBehaviour {
 			break;
 		case "t16":
 			player.transform.position = new Vector2(-7,-1);
-			camera.transform.position = new Vector3 (0, 0, -10);
+			camera.transform.position = new Vector3 (146.2f, 1, -10);
 			break;
 		case "t17":
 			player.transform.position = new Vector2(-7,-1);
