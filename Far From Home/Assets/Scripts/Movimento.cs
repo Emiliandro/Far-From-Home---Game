@@ -34,30 +34,39 @@ public class Movimento : MonoBehaviour {
 		print ("player is connected");
 	}
 
-	void FixedUpdate(){
+	void Update(){
 
         if (Input.GetKey(right))
         {
+            running = false;
             count = 1;
             if (Input.GetKey(run)) running = true;
         }
         else if (Input.GetKey(left))
         {
+            running = false;
+            count = 2;
             if (Input.GetKey(run)) running = true;
-          
         }
         else if (Input.GetKey(up)) count = 3;
         else if (Input.GetKey(down)) count = 4;
-        else
+        else count = 0;
+        //StartCoroutine(startMoving ());
+        StartCoroutine(startRunning());
+}
+    void FixedUpdate()
+    {
+        if (count == 1)
         {
-            running = false;
-            count = 0;
+            player_rb.velocity = new Vector2(velright, 0f);
+        } else if (count == 2) {
+            player_rb.velocity = new Vector2(velleft, 0f);
+        } else {
+            player_rb.velocity = Vector2.zero;
         }
-		StartCoroutine(startMoving ());
-		StartCoroutine(startRunning());
-	}
+    }
 
-	private IEnumerator startMoving (){
+	/*private IEnumerator startMoving (){
 		switch (count) {
 		case 0:
 			    player_rb.velocity = new Vector2(0, 0);
@@ -74,13 +83,13 @@ public class Movimento : MonoBehaviour {
 			break;
 		}
 		yield return new WaitForSeconds (4);
-	}
-
-	private IEnumerator startRunning (){
+	}*/
+    
+    private IEnumerator startRunning (){
 		switch (running){
 		case true:
-			velleft = o_velleft*1.3f;
-			velright = o_velright*1.3f;
+			velleft = o_velleft*2f;
+			velright = o_velright*2f;
 			break;
 		case false:
 			velleft = o_velleft;

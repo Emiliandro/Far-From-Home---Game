@@ -1,31 +1,69 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Teleport : MonoBehaviour {
-	private GameObject player, camera;
+public class Interagiveis : MonoBehaviour {
+	private bool interagir;
+	private GameObject player, camera, h_item;
+	public enum tipo{
+		Portas, 
+		Itens
+	}
+	public tipo Tipo;
+	public Vector2 Destino;
+	public Vector3 C_Destino;
+
 	void Awake(){
 		camera = GameObject.FindGameObjectWithTag ("MainCamera");
 		player = GameObject.FindGameObjectWithTag ("Player");
+		h_item = GameObject.FindGameObjectWithTag ("Hud");
 	}
 
-	private void OnTriggerEnter2D(Collider2D other){
-		switch (other.gameObject.name) {
+	private void OnTriggerStay2D(Collider2D other){
+		if (other.name == player.name) interagir = true;
+	}
+
+	private void OnTriggerExit2D(Collider2D exitOther){
+		if (exitOther.name == player.name) interagir = false;
+	}
+
+	public void Update(){
+		if (Input.GetKey(KeyCode.E) && interagir) {
+			switch (Tipo){
+			case tipo.Portas:
+				player.transform.position = Destino;
+				camera.transform.position = C_Destino;
+				break;
+			case tipo.Itens:
+				Destroy (this.gameObject);
+				setVisible ();
+				break;
+			}
+		}
+	}
+	private void setVisible(){
+		h_item.GetComponent <SpriteRenderer> ().enabled = true;
+	}
+	/*private void teleport(){
+		switch (otherN) {
 		case "t1":
-			player.transform.position = new Vector2 (-7, 30);
-			camera.transform.position = new Vector3 (0, 31, -10);
+
 			break;
+
 		case "t2":
 			player.transform.position = new Vector2(-7,59.4f);
 			camera.transform.position = new Vector3 (0, 61, -10);
 			break;
+
 		case "t3":
 			player.transform.position = new Vector2(7,-2);
 			camera.transform.position = new Vector3 (0, 0, -10);
 			break;
+
 		case "t4":
 			player.transform.position = new Vector2(53,-0.1f);
 			camera.transform.position = new Vector3 (60, 1.5f, -10);
 			break;
+
 		case "t5": 
 			player.transform.position = new Vector2(8,30);
 			camera.transform.position = new Vector3 (0, 31, -10);
@@ -106,5 +144,6 @@ public class Teleport : MonoBehaviour {
 			break;
 
 		}
-	}
+	}*/
+
 }
