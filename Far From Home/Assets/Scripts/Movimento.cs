@@ -64,27 +64,7 @@ public class Movimento : MonoBehaviour {
         } else {
             player_rb.velocity = Vector2.zero;
         }
-    }
-
-	/*private IEnumerator startMoving (){
-		switch (count) {
-		case 0:
-			    player_rb.velocity = new Vector2(0, 0);
-            break;
-		case 1:
-                player_rb.velocity = new Vector2(velright, 0);
-			break;
-		case 2:
-                player_rb.velocity = new Vector2(velleft, 0);
-			break;
-		case 3:
-			break;
-		case 4:
-			break;
-		}
-		yield return new WaitForSeconds (4);
-	}*/
-    
+    }    
     private IEnumerator startRunning (){
 		switch (running){
 		case true:

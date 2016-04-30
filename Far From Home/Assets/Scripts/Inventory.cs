@@ -2,21 +2,33 @@
 using System.Collections;
 
 public class Inventory : MonoBehaviour {
-	public enum items {
-		MOLHO = 1,
-		PEDECABRA = 2,
-		CHAVE = 3
-	}
-	[SerializeField] private items _invetario;
+    public static Inventory instance;
+    [SerializeField] private GameObject Molho, Chave, PDC;
 
-	public void inventario(){
-		switch(_invetario){
-		case items.MOLHO:
-			break;
-		case items.PEDECABRA:
-			break;
-		case items.CHAVE:
-			break; 
-		}
-	}
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        Molho = GameObject.Find("Molho");
+        Chave = GameObject.Find("Chave");
+        PDC = GameObject.Find("PDC");
+    }
+
+	public void hud(int itemIdx)
+        {
+        if (itemIdx == 1)
+        {
+            Molho.GetComponent<SpriteRenderer>().enabled = true;
+        }
+        else if (itemIdx == 2)
+        {
+            Chave.GetComponent<SpriteRenderer>().enabled = true;
+        }
+        else if (itemIdx == 3)
+        {
+            PDC.GetComponent<SpriteRenderer>().enabled = true;
+        }
+    }
 }
