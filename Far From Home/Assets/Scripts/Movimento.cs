@@ -3,21 +3,27 @@ using System.Collections;
 
 public class Movimento : MonoBehaviour {
 
+    public static Movimento instance;
+
 	[SerializeField] private KeyCode right, left, up, down, run;
 	[SerializeField] private float velright, velleft;
 	private float o_velright, o_velleft;
 	[SerializeField] private int count;
 	[SerializeField] private GameObject player;
 	private Rigidbody2D player_rb;
-	[SerializeField] private bool running;
+	[SerializeField] private bool running, escondido;
 
-	void Start () {
-		o_velright = velright;
+    void Start () {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        o_velright = velright;
 		count = 0;
-		running = false;
 		StartCoroutine (leftdown ());
 		StartCoroutine (getRB());
 		o_velleft = velleft;
+        escondido = false;
 
 	}
 
@@ -48,18 +54,16 @@ public class Movimento : MonoBehaviour {
             count = 2;
             if (Input.GetKey(run)) running = true;
         }
-        else if (Input.GetKey(up)) count = 3;
-        else if (Input.GetKey(down)) count = 4;
+        else if (Input.GetKey(down)) Esconder(2);
         else count = 0;
-        //StartCoroutine(startMoving ());
         StartCoroutine(startRunning());
 }
     void FixedUpdate()
     {
-        if (count == 1)
+        if (count == 1 && escondido == false)
         {
             player_rb.velocity = new Vector2(velright, 0f);
-        } else if (count == 2) {
+        } else if (count == 2 && escondido == false) {
             player_rb.velocity = new Vector2(velleft, 0f);
         } else {
             player_rb.velocity = Vector2.zero;
@@ -77,6 +81,22 @@ public class Movimento : MonoBehaviour {
 			break;
 		}
 		yield return new WaitForSeconds (10);
-
 	}
+    public void Esconder(int EscIdx)
+    {
+        if (EscIdx == 1)
+        {
+            escondido = true;
+            player.GetComponent<Rigidbody2D>().isKinematic = true;
+            player.GetComponent<BoxCollider2D>().isTrigger = true;
+            player.GetComponent<SpriteRenderer>().enabled = false;
+        }
+        else
+        {
+            escondido = false;
+            player.GetComponent<Rigidbody2D>().isKinematic = false;
+            player.GetComponent<BoxCollider2D>().isTrigger = false;
+            player.GetComponent<SpriteRenderer>().enabled = true;
+        }
+    }
 }

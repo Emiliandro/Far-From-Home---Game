@@ -1,63 +1,75 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Interagiveis : MonoBehaviour {
-	private bool interagir, M, C, P;
-	private GameObject player, camera, escada, chao;
-	public enum tipo{
-		Portas, 
-		Itens,
-        Escada
-	}
-	public tipo Tipo;
-	public Vector2 Destino;
-	public Vector3 C_Destino;
+public class Interagiveis : MonoBehaviour
+{
+    public static Interagiveis instance;
+    private bool interagir;
+    public enum tipo
+    {
+        Portas = 0,
+        Itens = 1,
+        Escada = 2,
+        Esconderijo = 3
+    }
+    public tipo Tipo;
 
-	void Awake(){
-		camera = GameObject.FindGameObjectWithTag ("MainCamera");
-		player = GameObject.FindGameObjectWithTag ("Player");
-            }
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
-	private void OnTriggerStay2D(Collider2D other){
-		if (other.name == player.name) interagir = true;
-	}
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.tag == "Player") interagir = true;
+    }
 
-	private void OnTriggerExit2D(Collider2D exitOther){
-		if (exitOther.name == player.name) interagir = false;
-	}
+    private void OnTriggerExit2D(Collider2D exitOther)
+    {
+        if (exitOther.tag == "Player") interagir = false;
+    }
 
-	public void Update(){
-		if (Input.GetKey(KeyCode.E) && interagir) {
-            switch (Tipo) {
+    public void Update()
+    {
+        if (Input.GetKey(KeyCode.E) && interagir)
+        {
+            switch (Tipo)
+            {
                 case tipo.Portas:
-                    player.transform.position = Destino;
-                    camera.transform.position = C_Destino;
+                    Portas.instance.UsePortas();
                     break;
-			    case tipo.Itens:
-                    
+                case tipo.Itens:
+
                     if (this.name == "Item1")
                     {
-                        M = true;
                         Destroy(this.gameObject);
                         Inventory.instance.hud(1);
+                        Portas.instance.GetMeC(1);
                     }
                     else if (this.name == "Item2")
                     {
-                        C = true;
                         Destroy(this.gameObject);
                         Inventory.instance.hud(2);
+                        Portas.instance.GetMeC(2);
                     }
                     else if (this.name == "Item3")
                     {
-                        P = true;
                         Destroy(this.gameObject);
                         Inventory.instance.hud(3);
+                        Escada.instance.GetPDC(3);
                     }
                     break;
-            case tipo.Escada:
-                    Escada.instance.downEscada();
+                case tipo.Escada:
+                    Escada.instance.UseEscada();
                     break;
-			}
-		}
-	}
+            }
+        }
+        else if (Input.GetKey(KeyCode.UpArrow) && interagir)
+        {
+            if (Tipo == tipo.Esconderijo) Movimento.instance.Esconder(1);
+        }
+    }
 }
