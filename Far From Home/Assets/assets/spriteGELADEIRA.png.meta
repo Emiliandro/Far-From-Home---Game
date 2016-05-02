@@ -1,9 +1,11 @@
 fileFormatVersion: 2
 guid: 99a27a4f8ceb4b34983dabbc446718c8
-timeCreated: 1461969191
+timeCreated: 1462163613
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: spriteGELADEIRA_0
+    21300002: spriteGELADEIRA_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -38,7 +40,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +51,83 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: spriteGELADEIRA_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 0
+        width: 424
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 201, y: -387}
+        - {x: 201, y: -375}
+        - {x: 212, y: -375}
+        - {x: 212, y: 375}
+        - {x: 201, y: 375}
+        - {x: 201, y: 388}
+        - {x: 199, y: 390}
+        - {x: 187, y: 390}
+        - {x: 187, y: 400}
+        - {x: -186, y: 400}
+        - {x: -186, y: 390}
+        - {x: -199, y: 390}
+        - {x: -201, y: 388}
+        - {x: -201, y: 375}
+        - {x: -212, y: 375}
+        - {x: -212, y: -375}
+        - {x: -201, y: -375}
+        - {x: -201, y: -387}
+        - {x: -199, y: -389}
+        - {x: -186, y: -389}
+        - {x: -186, y: -400}
+        - {x: 187, y: -400}
+        - {x: 187, y: -389}
+        - {x: 199, y: -389}
+    - name: spriteGELADEIRA_1
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 0
+        width: 795
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 384.5, y: -387}
+        - {x: 384.5, y: -375}
+        - {x: 397.5, y: -375}
+        - {x: 397.5, y: 141}
+        - {x: 384.5, y: 141}
+        - {x: 384.5, y: 152}
+        - {x: 382.5, y: 154}
+        - {x: 28.5, y: 154}
+        - {x: 28.5, y: 373}
+        - {x: 26.5, y: 375}
+        - {x: 15.5, y: 375}
+        - {x: 15.5, y: 388}
+        - {x: 13.5, y: 390}
+        - {x: 1.5, y: 390}
+        - {x: 1.5, y: 400}
+        - {x: -371.5, y: 400}
+        - {x: -371.5, y: 390}
+        - {x: -384.5, y: 390}
+        - {x: -386.5, y: 388}
+        - {x: -386.5, y: 375}
+        - {x: -397.5, y: 375}
+        - {x: -397.5, y: -375}
+        - {x: -386.5, y: -375}
+        - {x: -386.5, y: -387}
+        - {x: -384.5, y: -389}
+        - {x: -371.5, y: -389}
+        - {x: -371.5, y: -400}
+        - {x: 1.5, y: -400}
+        - {x: 1.5, y: -389}
+        - {x: 382.5, y: -389}
     outline: []
   spritePackingTag: 
   userData: 
