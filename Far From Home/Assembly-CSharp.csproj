@@ -47,6 +47,8 @@
   <ItemGroup>
      <Compile Include="Assets\AnimController.cs" />
      <Compile Include="Assets\Scripts\ChangeSceneByButton.cs" />
+     <Compile Include="Assets\Scripts\Creditos\CallMenu.cs" />
+     <Compile Include="Assets\Scripts\Cutscene\GoToGame.cs" />
      <Compile Include="Assets\Scripts\Cutscene\PlayerCutscene.cs" />
      <Compile Include="Assets\Scripts\Escada.cs" />
      <Compile Include="Assets\Scripts\FollowCamera2D.cs" />
