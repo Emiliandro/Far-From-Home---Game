@@ -11,7 +11,7 @@ public class Movimento : MonoBehaviour {
 	[SerializeField] private int count;
 	[SerializeField] private GameObject player;
 	private Rigidbody2D player_rb;
-	[SerializeField] private bool running, escondido;
+	[SerializeField] private bool running, escondido, esquerdai;
 
     void Start () {
         if (instance == null)
@@ -41,18 +41,46 @@ public class Movimento : MonoBehaviour {
 	}
 
 	void Update(){
+		// animacoes
+
+		if (Input.GetKeyDown(right) && !escondido){
+			player.GetComponent<Animator>().Play("Player_walk",-1,0f);
+			//if (Input.GetKeyDown(run) && !escondido){
+				//player.GetComponent<Animator>().Play("Player_run",-1,0f);
+			//}
+			esquerdai = false;
+		} else if (Input.GetKeyDown(left) && !escondido) {
+			player.GetComponent<Animator>().Play("Player_walk_l",-1,0f);
+			//if (Input.GetKeyDown(run) && !escondido ){
+				//player.GetComponent<Animator>().Play("Player_run_l",-1,0f);
+			//}
+			esquerdai = true;
+			}  else {
+			if (Input.GetKeyUp(right) && !esquerdai && !escondido) {
+				player.GetComponent<Animator>().Play("Player_Idle",-1,0f);
+			} else if (Input.GetKeyUp(left) && esquerdai && !escondido) {
+				player.GetComponent<Animator>().Play("Player_Idle_l",-1,0f);
+
+			}
+		}
+
+		//
 
         if (Input.GetKey(right))
         {
             running = false;
             count = 1;
-            if (Input.GetKey(run)) running = true;
+			if (Input.GetKey(run)) {
+				running = true;
+			}
         }
         else if (Input.GetKey(left))
         {
             running = false;
             count = 2;
-            if (Input.GetKey(run)) running = true;
+			if (Input.GetKey(run)) {
+				running = true;
+			}
         }
         else if (Input.GetKey(down)) Esconder(2);
         else count = 0;
