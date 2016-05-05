@@ -39,7 +39,7 @@ public class Interagiveis : MonoBehaviour
             switch (Tipo)
             {
                 case tipo.Portas:
-                    Portas.instance.UsePortas();
+                    //Portas.instance.UsePortas();
                     break;
                 case tipo.Itens:
 

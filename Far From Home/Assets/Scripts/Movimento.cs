@@ -64,25 +64,32 @@ public class Movimento : MonoBehaviour {
 			}
 		}
 
-		//
+        //
 
         if (Input.GetKey(right))
         {
             running = false;
             count = 1;
-			if (Input.GetKey(run)) {
-				running = true;
-			}
+            if (Input.GetKey(run))
+            {
+                running = true;
+            }
         }
         else if (Input.GetKey(left))
         {
             running = false;
             count = 2;
-			if (Input.GetKey(run)) {
-				running = true;
-			}
+            if (Input.GetKey(run))
+            {
+                running = true;
+            }
         }
-        else if (Input.GetKey(down)) Esconder(2);
+        else if (Input.GetKey(down))
+        {
+            count = 3;
+            Esconder(2);
+        }
+
         else count = 0;
         StartCoroutine(startRunning());
 }
