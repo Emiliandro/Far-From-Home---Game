@@ -55,6 +55,8 @@
      <Compile Include="Assets\Scripts\IaBoss.cs" />
      <Compile Include="Assets\Scripts\Interagiveis.cs" />
      <Compile Include="Assets\Scripts\Inventory.cs" />
+     <Compile Include="Assets\Scripts\MenuInicial\MenuI.cs" />
+     <Compile Include="Assets\Scripts\MenuInicial\UsedInCredits.cs" />
      <Compile Include="Assets\Scripts\Movimento.cs" />
      <Compile Include="Assets\Scripts\Portas.cs" />
      <Compile Include="Assets\Scripts\SmoothFollowCamera2D.cs" />
