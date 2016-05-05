@@ -17,10 +17,7 @@ public class MenuI : MonoBehaviour {
         {
             items[0].transform.localScale = new Vector3(2f, 2f, 2f);
             items[1].transform.localScale = new Vector3(1f, 1f, 1f);
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                count = 1;
-            } else if (Input.GetKey(KeyCode.DownArrow)) {
+            if (Input.GetKey(KeyCode.DownArrow)) {
                 count = 1;
             }
             if (Input.GetKey(KeyCode.E))
@@ -34,9 +31,7 @@ public class MenuI : MonoBehaviour {
             if (Input.GetKey(KeyCode.UpArrow))
             {
                 count = 0;
-            } else if (Input.GetKey(KeyCode.DownArrow)){
-                count = 0;
-            }
+            } 
             if (Input.GetKey(KeyCode.E))
             {
                 Application.LoadLevel("Credits");

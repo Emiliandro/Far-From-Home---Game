@@ -12,4 +12,10 @@ public class CallMenu : MonoBehaviour {
 	void changeScene () {
 		Application.LoadLevel("MenuInicial");
 	}
+
+    void FixedUpdate() {
+        if (Input.anyKey) {
+            changeScene();
+        }
+    }
 }

@@ -5,11 +5,19 @@ public class GoToGame : MonoBehaviour {
 
 	// Use this for initialization
 	void Update () {
-		Invoke("changeScene",30f);
+		Invoke("changeScene",27f);
 	}
 
-	// Update is called once per frame
-	void changeScene () {
+    void FixedUpdate()
+    {
+        if (Input.anyKey)
+        {
+            changeScene();
+        }
+    }
+
+    // Update is called once per frame
+    void changeScene () {
 		Application.LoadLevel("tutorial");
 	}
 }
