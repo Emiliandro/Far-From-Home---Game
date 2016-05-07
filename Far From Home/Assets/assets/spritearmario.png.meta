@@ -1,9 +1,11 @@
 fileFormatVersion: 2
 guid: 29cbfe61e468b6546aea448a6a5b3dce
-timeCreated: 1461969190
+timeCreated: 1462579787
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: spritearmario_0
+    21300002: spritearmario_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -38,7 +40,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +51,41 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: spritearmario_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 0
+        width: 419
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -209.5, y: 400}
+        - {x: -209.5, y: -400}
+        - {x: 209.5, y: -400}
+        - {x: 209.5, y: 400}
+    - name: spritearmario_1
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 0
+        width: 576
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 288, y: 379}
+        - {x: 132, y: 379}
+        - {x: 132, y: 400}
+        - {x: -288, y: 400}
+        - {x: -288, y: -400}
+        - {x: 132, y: -400}
+        - {x: 132, y: -205}
+        - {x: 288, y: -205}
     outline: []
   spritePackingTag: 
   userData: 
