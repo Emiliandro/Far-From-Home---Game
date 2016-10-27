@@ -2,9 +2,10 @@
 using System.Collections;
 
 public class GoToGame : MonoBehaviour {
+    public string cenaseguinte;
 
-	// Use this for initialization
-	void Update () {
+    // Use this for initialization
+    void Update () {
 		Invoke("changeScene",27f);
 	}
 
@@ -18,6 +19,6 @@ public class GoToGame : MonoBehaviour {
 
     // Update is called once per frame
     void changeScene () {
-		Application.LoadLevel("tutorial");
+		Application.LoadLevel(cenaseguinte);
 	}
 }

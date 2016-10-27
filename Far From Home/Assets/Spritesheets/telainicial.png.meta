@@ -1,12 +1,13 @@
 fileFormatVersion: 2
 guid: 69a75701b75ee9f4fb0a4cd37f1432ed
-timeCreated: 1462415799
+timeCreated: 1477595889
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: telainicial_0
     21300002: telainicial_1
     21300004: telainicial_2
+    21300006: tela preta
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -49,11 +50,14 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: telainicial_0
+    - serializedVersion: 2
+      name: telainicial_0
       rect:
         serializedVersion: 2
         x: 385
@@ -63,12 +67,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -177, y: 35}
-        - {x: -177, y: -35}
-        - {x: 177, y: -35}
-        - {x: 177, y: 35}
-    - name: telainicial_1
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: telainicial_1
       rect:
         serializedVersion: 2
         x: 416
@@ -78,12 +80,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -141, y: 33}
-        - {x: -141, y: -33}
-        - {x: 141, y: -33}
-        - {x: 141, y: 33}
-    - name: telainicial_2
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: telainicial_2
       rect:
         serializedVersion: 2
         x: 376
@@ -93,11 +93,21 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -191.5, y: 85}
-        - {x: -191.5, y: -85}
-        - {x: 191.5, y: -85}
-        - {x: 191.5, y: 85}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tela preta
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 270
+        width: 159
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

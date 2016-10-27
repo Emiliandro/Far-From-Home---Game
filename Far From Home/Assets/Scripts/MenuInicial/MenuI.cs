@@ -5,8 +5,12 @@ public class MenuI : MonoBehaviour {
     [SerializeField]
     private GameObject[] items;
     private int count;
-	// Use this for initialization
-	void Awake ()
+    [Header("Cenas Seguintes")]
+    public string cena1;
+    public string cena2;
+
+    // Use this for initialization
+    void Start ()
     {
         count = 0;
 	}
@@ -22,7 +26,7 @@ public class MenuI : MonoBehaviour {
             }
             if (Input.GetKey(KeyCode.E))
             {
-                Application.LoadLevel("Cutscene1");
+                Application.LoadLevel(cena1);
             }
         }
         else {
@@ -34,7 +38,7 @@ public class MenuI : MonoBehaviour {
             } 
             if (Input.GetKey(KeyCode.E))
             {
-                Application.LoadLevel("Credits");
+                Application.LoadLevel(cena2);
             }
         }
     }
